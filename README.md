@@ -7,11 +7,12 @@
 [download-image]: https://img.shields.io/npm/dm/react-tooltip.svg?style=flat-square
 [download-url]: https://npmjs.org/package/react-tooltip
 
+## Forked from:
+[Original project: wwayne/react-tooltip](https://github.com/wwayne/react-tooltip)
+
 ## Maintainers
 
-[huumanoid](https://github.com/huumanoid)
-
-[aronhelser](https://github.com/aronhelser)
+[Andre Antunes Vieira](https://github.com/AndreAntunesVieira)
 
 ## Installation
 
@@ -97,10 +98,11 @@ Check the example [React-tooltip Test](https://react-tooltip.netlify.com/)
 > Hide the tooltip manually, the target is optional, if no target passed in, all existing tooltips will be hidden
 
 ```js
+import {findDOMNode} from 'react-dom'
 import ReactTooltip from 'react-tooltip'
 
-<p ref={ref => this.fooRef = ref} data-tip='tooltip'></p>
-<button onClick={() => { ReactTooltip.hide(this.fooRef) }}></button>
+<p ref='foo' data-tip='tooltip'></p>
+<button onClick={() => { ReactTooltip.hide(findDOMNode(this.refs.foo)) }}></button>
 <ReactTooltip />
 ```
 
@@ -113,10 +115,11 @@ import ReactTooltip from 'react-tooltip'
 > Show specific tooltip manually, for example:
 
 ```js
+import {findDOMNode} from 'react-dom'
 import ReactTooltip from 'react-tooltip'
 
-<p ref={ref => this.fooRef = ref} data-tip='tooltip'></p>
-<button onClick={() => { ReactTooltip.show(this.fooRef) }}></button>
+<p ref='foo' data-tip='tooltip'></p>
+<button onClick={() => { ReactTooltip.show(findDOMNode(this.refs.foo)) }}></button>
 <ReactTooltip />
 ```
 
